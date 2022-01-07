@@ -9,8 +9,22 @@ import pandas as pd
 import time
 
 #Terminal arguments to pass when running the script
-sitename = sys.argv[1]
-device = sys.argv[2]
+# if no arguments, display syntay
+
+argn = len(sys.argv) 
+print(argn)
+if argn < 2:
+    print("Program call: python https://website.com [device]")
+    print("device may be: desktop / mobile")
+    sys.exit(0)
+else:
+    sitename = sys.argv[1]
+    if argn == 2:
+        # set desktop as default browsing device 
+        device = "desktop"
+    else:
+        device = sys.argv[2]
+
 #keyword = "+".join(sys.argv[3:])
 
 #printing the arguments before script starts 
@@ -86,6 +100,7 @@ def mobile(keyword,sitename,device,useragent):
     d=[]
     for i in links:
         counter = counter + 1
+        print(i)
         if sitename in str(i):
             url = i.find_all('a', href=True)
             position = "%d" % (counter)
@@ -180,25 +195,3 @@ elif device == 'desktop':
         t = randint(1,10)
         print('Sleeping time is' ,t ,'Seconds')
         time.sleep(t)
-else:
-    print(" X_X You didn't specify a user agent. We will still run the script but your filename will have a weird name")
-    useragent = random.choice(mobile_agent)
-    for keyword in keywords['Keywords']:
-        print(keyword)
-        mobile(keyword,sitename,device,useragent)
-        t = randint(1,10)
-        print('Sleeping time is' ,t ,'Seconds')
-        time.sleep(t)
-
-
-
-
-
-
-
-
-
-
-
-
-

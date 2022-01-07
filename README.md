@@ -23,11 +23,15 @@ One thing to note, currently the script does not use proxies to check for the ke
 
 ## Installation
 
-Installation of Python robobrowser
+Install dependecies: robobrowser, xlrd  and pandas
 
 ```shell
 pip install robobrowser
+pip install pandas
+pip install xlrd 
 ```
+Fix the robbobrowser as described at the end of the page, in "Contributing and Questions"
+
 After all, dependencies are installed, we can start testing if the script is working fine.
 
 ## Running tests
