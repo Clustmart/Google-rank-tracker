@@ -2,6 +2,7 @@ import sys
 import re
 import random
 from robobrowser import RoboBrowser
+from functools import cached_property
 import datetime
 import csv
 

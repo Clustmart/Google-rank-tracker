@@ -11,7 +11,6 @@ import sqlite3
 import logging
 import urllib.request
 
-
 # Customize path to your SQLite database
 database = "../sqlite_database/rank.db"
 
